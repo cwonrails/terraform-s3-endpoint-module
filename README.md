@@ -68,4 +68,4 @@ module "app" {
 ## Output
 - **bucket_name:** `${aws_s3_bucket.main.id}` Full name of the S3 bucket.
 - **cloudfront_distribution_id:** `${aws_cloudfront_distribution.main.id}` CloudFront Distribution Id for CI/CD to trigger cache clearing (`aws cloudfront create-invalidation --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION_ID} --paths /index.html`)
-0 **cloudfront_distribution_domain_name:** `${aws_cloudfront_distribution.main.domain_name}` CloudFront Domain Name for DNS updating.
+- **cloudfront_distribution_domain_name:** `${aws_cloudfront_distribution.main.domain_name}` CloudFront Domain Name for DNS updating.

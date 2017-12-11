@@ -1,7 +1,7 @@
 'use strict';
 
 const headers = {
-    "all": {
+    "any": {
         "Server":"",
         "X-Content-Type-Options": "nosniff",
         "Referrer-Policy": "no-referrer",
@@ -46,13 +46,13 @@ function handler (event, context, callback) {
     const response = event.Records[0].cf.response;
     const contentType = response.headers['content-type'][0].value;
 
-    let responseHeaders = getHeaders('all');
+    let responseHeaders = getHeaders('any');
 
     if (contentType.indexOf('text/html') !== -1) {
-        responseHeaders = Object.assign({}, responseHeaders, getHeaders('html'));
+        Object.assign(responseHeaders, getHeaders('html'));
     }
 
-    response.headers = Object.assign({}, response.headers, responseHeaders);
+    Object.assign(response.headers, responseHeaders);
 
     callback(null, response);
 }
