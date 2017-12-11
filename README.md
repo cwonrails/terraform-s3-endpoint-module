@@ -20,7 +20,7 @@ provider "aws" {
 ```hcl-terraform
 data "aws_acm_certificate" "main" {
   provider = "aws.edge"
-  domain   = "${var.env}"}-appname.tesera.com"
+  domain   = "${var.env}-appname.tesera.com"
   statuses = ["ISSUED"]
 }
 ```

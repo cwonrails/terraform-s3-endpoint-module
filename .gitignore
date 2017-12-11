@@ -5,3 +5,11 @@
 
 # Module directory
 .terraform/
+
+# node
+node_modules
+package-lock.json
+
+# IDE
+.idea
+*.iml
